@@ -1,0 +1,28 @@
+<view class='container'>
+  <view class='header'>
+     <image class='plus' src='../../images/plus.png'/>
+  <input class='new-todo' value = "{{input}}" placeholder='Anything here...'
+  auto-focus bindinput="inputChangeHandle" bindconfirm='addTodoHandle' />
+  </view>
+    
+<block wx:if = "{{todos.length}}">
+
+    <view class='todos'>    
+       <view class= "item{{item.completed?'completed': ''}}" wx:for = "{{todos}}"    wx:key = "{{index}}" bindtap='toggleTodoHandle' data-index= "{{index}}"> 
+       
+    <icon class = "checkbox" type ="{{item.completed?'success':'circle'}}"/>
+    <text class='name'>{{item.name}}</text>
+    <icon class='remove' type='clear' size = "16" catchtap='removeTodoHandle' data-index = "{{index}}"/> 
+       </view>
+    </view>
+<view class='footer'>
+  <text class='btn' bindtap='toggleAllHandle'>
+  Toggle All</text> 
+<text wx:if = "{{leftCount}}">{{leftCount}}{{ leftCount === 1 ? 'item' : 'items' }}left</text>
+</view>
+    </block>
+    <block wx:else>
+      <text class="title">Congratulations!</text>
+      <text class="content">There's no more work left.</text>
+    </block>
+</view>

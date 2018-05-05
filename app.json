@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "TODOS",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+
+"tabBar": {
+  "list": [{
+    "pagePath": "pages/index/index",
+    "text": "todos",
+    "iconPath": "images/todos.png",
+    "selectedIconPath": "images/todos-active.png"
+  },
+  {
+     "pagePath":"pages/logs/logs",
+    "text":"logs",
+    "iconPath":"images/logs.png",
+    "selectedIconPath":"images/logs-active.png"
+  }]
+}
+
+}
